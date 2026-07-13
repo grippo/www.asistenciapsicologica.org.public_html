@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Asistencia Psicológica de Buenos Aires</title>
+    <!-- Fuentes de Google -->
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+    <!-- Iconos FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        /* --- RESET Y ESTILOS GLOBALES --- */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Lato', sans-serif;
+            color: #333;
+            line-height: 1.6;
+            background-color: #fff;
+        }
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        h1, h2, h3, h4 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+        }
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: none;
+        }
+        .btn-primary {
+            background-color: #285a53;
+            color: white;
+        }
+        .btn-primary:hover {
+            background-color: #1c3f3a;
+            transform: translateY(-2px);
+        }
+        .btn-outline {
+            background-color: white;
+            color: #285a53;
+            border: 1px solid #ccc;
+        }
+        .btn-outline:hover {
+            background-color: #f4f4f4;
+        }
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .section-title h2 {
+            font-size: 2.2rem;
+            color: #333;
+            margin-bottom: 5px;
+        }
+        .section-title p {
+            font-size: 0.9rem;
+            color: #777;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* --- HEADER --- */
+        header {
+            padding: 20px 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        .logo-icon {
+            font-size: 1.5rem;
+            color: #8ba69e;
+        }
+        .logo-text {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.1rem;
+            line-height: 1.2;
+            color: #285a53;
+        }
+        .logo-text span {
+            display: block;
+            font-size: 0.8rem;
+            font-family: 'Lato', sans-serif;
+            font-weight: 300;
+            letter-spacing: 1px;
+        }
+        nav ul {
+            display: flex;
+            gap: 25px;
+            list-style: none;
+        }
+        nav a {
+            font-size: 0.9rem;
+            color: #555;
+            font-weight: 500;
+        }
+        nav a:hover {
+            color: #285a53;
+        }
+
+        /* --- HERO --- */
+        #hero {
+            padding: 60px 0 40px;
+            background-color: #f9f9f6;
+        }
+        .hero-flex {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+        }
+        .hero-content {
+            flex: 1;
+        }
+        .hero-content h1 {
+            font-size: 2.8rem;
+            color: #285a53;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+        .hero-content p {
+            color: #555;
+            margin-bottom: 25px;
+            max-width: 450px;
+        }
+        .hero-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-bottom: 30px;
+        }
+        .hero-tags span {
+            font-size: 0.8rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: #444;
+        }
+        .hero-tags i {
+            color: #285a53;
+        }
+        .hero-buttons {
+            display: flex;
+            gap: 15px;
+        }
+        .hero-image {
+            flex: 1;
+        }
+        .hero-image img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            object-fit: cover;
+            height: 400px;
+        }
+
+        /* --- SERVICIOS --- */
+        #servicios {
+            padding: 60px 0;
+            background: white;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            text-align: center;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            padding-bottom: 20px;
+        }
+        .service-card:hover {
+            transform: translateY(-5px);
+        }
+        .service-img-wrap {
+            position: relative;
+            height: 200px;
+        }
+        .service-img-wrap img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .service-icon {
+            position: absolute;
+            bottom: -25px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 50px;
+            height: 50px;
+            background: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+            color: #285a53;
+            font-size: 1.2rem;
+        }
+        .service-card h3 {
+            margin: 35px 0 10px;
+            color: #333;
+            font-size: 1.2rem;
+        }
+        .service-card p {
+            font-size: 0.85rem;
+            color: #666;
+            padding: 0 15px;
+        }
+
+        /* --- MODALIDADES --- */
+        #modalidades {
+            padding: 60px 0;
+            background: #f9f9f6;
+        }
+        .modalidades-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+        }
+        .modalidad-card {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            background: white;
+            padding: 20px;
+            border-radius: 20px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+        .modalidad-img {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            flex-shrink: 0;
+            border: 2px solid #ddd;
+        }
+        .modalidad-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        .modalidad-text h3 {
+            color: #285a53;
+            margin-bottom: 5px;
+            font-size: 1.2rem;
+        }
+        .modalidad-text p {
+            font-size: 0.9rem;
+            color: #555;
+        }
+
+        /* --- POR QUÉ ELEGIRNOS --- */
+        #por-que-elegirnos {
+            background-color: #558b79;
+            padding: 50px 0;
+            color: white;
+        }
+        #por-que-elegirnos h2 {
+            text-align: center;
+            margin-bottom: 30px;
+            font-size: 1.8rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+        .features-grid {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            gap: 20px;
+            text-align: center;
+        }
+        .feature-item {
+            flex: 1 1 150px;
+        }
+        .feature-item i {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+            display: block;
+        }
+        .feature-item p {
+            font-size: 0.9rem;
+            font-weight: 400;
+        }
+
+        /* --- FOOTER CTA --- */
+        #contacto-footer {
+            background-color: #e8f0ec;
+            padding: 60px 0 20px;
+            position: relative;
+        }
+        .footer-flex {
+            display: flex;
+            justify-content: space-between;
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        .footer-left {
+            flex: 1;
+        }
+        .footer-left h3 {
+            font-family: 'Dancing Script', cursive;
+            font-size: 2.5rem;
+            color: #285a53;
+        }
+        .footer-left h3 span {
+            font-family: 'Playfair Display', serif;
+            font-weight: 400;
+            font-size: 1.8rem;
+            display: block;
+            margin-top: 5px;
+        }
+        .footer-right {
+            flex: 1.5;
+        }
+        .footer-right h3 {
+            color: #285a53;
+            font-size: 1.5rem;
+            margin-bottom: 20px;
+        }
+        .contact-info {
+            list-style: none;
+        }
+        .contact-info li {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 10px;
+            color: #444;
+            font-size: 0.95rem;
+        }
+        .contact-info i {
+            color: #285a53;
+            width: 20px;
+        }
+        .contact-btn {
+            margin-top: 20px;
+        }
+        .footer-bottom {
+            text-align: center;
+            border-top: 1px solid #ccc;
+            padding-top: 20px;
+            font-size: 0.85rem;
+            color: #333;
+            font-style: italic;
+        }
+
+        /* --- MEDIA QUERIES --- */
+        @media (max-width: 900px) {
+            .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .modalidades-grid { grid-template-columns: 1fr; }
+        }
+        @media (max-width: 768px) {
+            .header-container { flex-wrap: wrap; gap: 15px; }
+            nav ul { flex-wrap: wrap; justify-content: center; gap: 10px; }
+            .hero-flex { flex-direction: column-reverse; }
+            .hero-content h1 { font-size: 2rem; }
+            .services-grid { grid-template-columns: 1fr; }
+            .footer-flex { flex-direction: column; }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- HEADER -->
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <div class="logo-icon"><i class="fas fa-plus-circle"></i></div>
+                <div class="logo-text">
+                    Asistencia Psicológica
+                    <span>de Buenos Aires</span>
+                </div>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="#">Inicio</a></li>
+                    <li><a href="#">Sobre nosotros</a></li>
+                    <li><a href="#">Servicios</a></li>
+                    <li><a href="#">Modalidades</a></li>
+                    <li><a href="#">Contacto</a></li>
+                </ul>
+            </nav>
+            <a href="#" class="btn btn-primary"><i class="far fa-calendar-alt"></i> Solicitar turno</a>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section id="hero">
+        <div class="container hero-flex">
+            <div class="hero-content">
+                <h1>Espacio de escucha, acompañamiento y bienestar emocional</h1>
+                <p>Brindamos atención psicológica especializada, adaptada a las necesidades de cada etapa de la vida. Nuestro objetivo es ofrecer un espacio de confianza, respeto y profesionalismo para promover el bienestar emocional y el desarrollo personal.</p>
+                
+                <div class="hero-tags">
+                    <span><i class="fas fa-map-marker-alt"></i> Atención presencial en CABA</span>
+                    <span><i class="fas fa-laptop"></i> Atención virtual</span>
+                    <span><i class="fas fa-id-card"></i> Profesionales matriculados</span>
+                    <span><i class="fas fa-clock"></i> Turnos programados</span>
+                </div>
+
+                <div class="hero-buttons">
+                    <a href="#" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Solicitar una consulta</a>
+                    <a href="#" class="btn btn-outline"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp</a>
+                </div>
+            </div>
+            <div class="hero-image">
+                <!-- IMAGEN HERO REEMPLAZADA Y CORREGIDA (Ya no da 404) -->
+                <img src="https://images.unsplash.com/photo-1586023492125-27b2c045efd7?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Sala de terapia acogedora">
+            </div>
+        </div>
+    </section>
+
+    <!-- SERVICIOS -->
+    <section id="servicios">
+        <div class="container">
+            <div class="section-title">
+                <p>NUESTROS SERVICIOS</p>
+                <h2>Tratamientos Psicológicos</h2>
+                <div style="font-size: 1.5rem; color:#ccc; margin-top:-10px;">~ ~</div>
+            </div>
+            
+            <div class="services-grid">
+                <!-- Card 1 -->
+                <div class="service-card">
+                    <div class="service-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1503919545889-aef636e10ad4?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Niños">
+                        <div class="service-icon"><i class="fas fa-child"></i></div>
+                    </div>
+                    <h3>Niños</h3>
+                    <p>Evaluación y tratamiento de dificultades emocionales, conductuales, escolares y vinculares.</p>
+                </div>
+                <!-- Card 2 -->
+                <div class="service-card">
+                    <div class="service-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Adolescentes">
+                        <div class="service-icon"><i class="fas fa-user-graduate"></i></div>
+                    </div>
+                    <h3>Adolescentes</h3>
+                    <p>Acompañamiento en problemáticas propias de la adolescencia: autoestima, ansiedad, orientación y relaciones interpersonales.</p>
+                </div>
+                <!-- Card 3 -->
+                <div class="service-card">
+                    <div class="service-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1581093588401-fbb62a02f120?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Adultos">
+                        <div class="service-icon"><i class="fas fa-user"></i></div>
+                    </div>
+                    <h3>Adultos</h3>
+                    <p>Tratamiento de ansiedad, estrés, depresión, crisis vitales, dificultades vinculares y desarrollo personal.</p>
+                </div>
+                <!-- Card 4 -->
+                <div class="service-card">
+                    <div class="service-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1516589178581-6cd7833ae3b2?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Parejas">
+                        <div class="service-icon"><i class="fas fa-heart"></i></div>
+                    </div>
+                    <h3>Parejas</h3>
+                    <p>Espacio terapéutico orientado a mejorar la comunicación, fortalecer vínculos y abordar situaciones de conflicto.</p>
+                </div>
+                <!-- Card 5 -->
+                <div class="service-card">
+                    <div class="service-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1519331379826-f10be5486c6f?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Familias">
+                        <div class="service-icon"><i class="fas fa-users"></i></div>
+                    </div>
+                    <h3>Familias</h3>
+                    <p>Intervenciones destinadas a favorecer la convivencia, la comunicación y el funcionamiento familiar.</p>
+                </div>
+                <!-- Card 6 -->
+                <div class="service-card">
+                    <div class="service-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Psicodiagnósticos">
+                        <div class="service-icon"><i class="fas fa-clipboard-list"></i></div>
+                    </div>
+                    <h3>Psicodiagnósticos</h3>
+                    <p>Evaluaciones psicológicas y psicodiagnósticas para niños, adolescentes y adultos con informes profesionales.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- MODALIDADES -->
+    <section id="modalidades">
+        <div class="container">
+            <div class="section-title">
+                <p>MODALIDADES DE ATENCIÓN</p>
+                <h2>Opciones para tu bienestar</h2>
+                <div style="font-size: 1.5rem; color:#ccc; margin-top:-10px;">~ ~</div>
+            </div>
+            <div class="modalidades-grid">
+                <div class="modalidad-card">
+                    <div class="modalidad-img">
+                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Oficina">
+                    </div>
+                    <div class="modalidad-text">
+                        <h3><i class="fas fa-map-marker-alt" style="margin-right: 10px; font-size: 1.5rem; color: #558b79;"></i>Atención Presencial</h3>
+                        <p>Consultorio ubicado en Ciudad Autónoma de Buenos Aires. Un espacio cálido, confidencial y especialmente preparado para la atención psicológica.</p>
+                    </div>
+                </div>
+                <div class="modalidad-card">
+                    <div class="modalidad-img">
+                        <img src="https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Laptop">
+                    </div>
+                    <div class="modalidad-text">
+                        <h3><i class="fas fa-laptop" style="margin-right: 10px; font-size: 1.5rem; color: #558b79;"></i>Atención Virtual</h3>
+                        <p>Sesiones online mediante videollamada. Una alternativa cómoda y efectiva para acceder al tratamiento desde cualquier lugar.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- POR QUÉ ELEGIRNOS -->
+    <section id="por-que-elegirnos">
+        <div class="container">
+            <h2>¿POR QUÉ ELEGIRNOS?</h2>
+            <div class="features-grid">
+                <div class="feature-item">
+                    <i class="fas fa-user-check"></i>
+                    <p>Atención personalizada</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-shield-alt"></i>
+                    <p>Enfoque profesional y ético</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-heart"></i>
+                    <p>Tratamientos adaptados a cada persona</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-star"></i>
+                    <p>Amplia experiencia clínica</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-globe"></i>
+                    <p>Modalidad presencial y virtual</p>
+                </div>
+                <div class="feature-item">
+                    <i class="fas fa-hand-holding-heart"></i>
+                    <p>Trabajo interdisciplinario</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FOOTER / CONTACTO -->
+    <footer id="contacto-footer">
+        <div class="container">
+            <div class="footer-flex">
+                <div class="footer-left">
+                    <h3>Acompañamos<br><span>tu proceso, cuidamos tu bienestar.</span></h3>
+                </div>
+                <div class="footer-right">
+                    <h3>Solicite una entrevista de orientación</h3>
+                    <p style="color: #555; margin-bottom: 15px;">Estamos disponibles para responder consultas y brindar información sobre nuestros tratamientos y modalidades de atención.</p>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-phone-alt"></i> 11 1234 5678</li>
+                        <li><i class="fas fa-envelope"></i> info@asistenciapsicologicaba.com.ar</li>
+                        <li><i class="fas fa-map-marker-alt"></i> Ciudad Autónoma de Buenos Aires</li>
+                    </ul>
+                    <a href="#" class="btn btn-primary contact-btn"><i class="fas fa-calendar-alt"></i> Solicitar Turno Ahora</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                "Cada proceso terapéutico es una oportunidad para comprender, transformar y construir nuevas herramientas para los desafíos de la vida." <i class="fas fa-leaf" style="color: #285a53;"></i>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
