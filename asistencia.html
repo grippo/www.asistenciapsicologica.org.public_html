@@ -131,7 +131,13 @@
         nav a:hover {
             color: #285a53;
         }
-
+.logo-circular {
+  width: 56px;         /* Ajusta el tamaño según tu diseño web */
+  height: 56px;
+  border-radius: 50%;   /* Convierte la imagen cuadrada en un círculo perfecto */
+  object-fit: cover;    /* Asegura que la imagen se centre y no se deforme */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.05); /* Un toque de sombra sutil */
+}
         /* --- HERO --- */
         #hero {
             padding: 60px 0 40px;
@@ -403,26 +409,28 @@
     <header>
         <div class="header-container">
             <div class="logo">
-                <div class="logo-icon"><i class="fas fa-plus-circle"></i></div>
+                <div class="logo-icon">
+                <img src="img/logo.png" alt="Asistencia Psicológica" class="logo-circular">
+                </div>
                 <div class="logo-text">
-                    Asistencia Psicológica
+                    ASISTENCIA Psicológica
                     <span>de Buenos Aires</span>
                 </div>
             </div>
             <nav>
                 <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="#">Sobre nosotros</a></li>
-                    <li><a href="#">Servicios</a></li>
-                    <li><a href="#">Modalidades</a></li>
-                    <li><a href="#">Contacto</a></li>
+                    <li><a href="#inicio">Inicio</a></li>
+                    <li><a href="#servicios">Servicios</a></li>
+                    <li><a href="#modalidades">Modalidades</a></li>
+                    <li><a href="#contacto">Contacto</a></li>
                 </ul>
             </nav>
-            <a href="#" class="btn btn-primary"><i class="far fa-calendar-alt"></i> Solicitar turno</a>
+            <a href="https://wa.me/541122501939?text=Hola,+me+interesa+solicitar+una+entrevista" class="btn btn-primary"><i class="far fa-calendar-alt"></i> Solicitar entrevista de admisión</a>
         </div>
     </header>
 
     <!-- HERO SECTION -->
+     <a name="inicio"></a>
     <section id="hero">
         <div class="container hero-flex">
             <div class="hero-content">
@@ -437,8 +445,8 @@
                 </div>
 
                 <div class="hero-buttons">
-                    <a href="#" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Solicitar una consulta</a>
-                    <a href="#" class="btn btn-outline"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp</a>
+                    <a href="https://wa.me/541122501939?text=Hola,+me+interesa+solicitar+una+entrevista" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Solicitar una consulta</a>
+                    <a href="https://wa.me/541122501939?text=Hola,+me+interesa+solicitar+una+entrevista" class="btn btn-outline"><i class="fab fa-whatsapp" style="color:#25D366"></i> WhatsApp</a>
                 </div>
             </div>
             <div class="hero-image">
@@ -449,6 +457,7 @@
     </section>
 
     <!-- SERVICIOS -->
+     <a name="servicios"></a>
     <section id="servicios">
         <div class="container">
             <div class="section-title">
@@ -517,6 +526,7 @@
     </section>
 
     <!-- MODALIDADES -->
+     <a name="modalidades"></a>
     <section id="modalidades">
         <div class="container">
             <div class="section-title">
@@ -527,7 +537,7 @@
             <div class="modalidades-grid">
                 <div class="modalidad-card">
                     <div class="modalidad-img">
-                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Oficina">
+                        <img src="https://images.unsplash.com/photo-1506377295352-e3154d43ea9e?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Oficina">
                     </div>
                     <div class="modalidad-text">
                         <h3><i class="fas fa-map-marker-alt" style="margin-right: 10px; font-size: 1.5rem; color: #558b79;"></i>Atención Presencial</h3>
@@ -536,7 +546,7 @@
                 </div>
                 <div class="modalidad-card">
                     <div class="modalidad-img">
-                        <img src="https://images.unsplash.com/photo-1593697821252-0c9137d9fc45?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Laptop">
+                        <img src="https://images.unsplash.com/photo-1588702547954-4800ead296ef?ixlib=rb-4.0.3&auto=format&fit=crop&w=200&q=80" alt="Laptop">
                     </div>
                     <div class="modalidad-text">
                         <h3><i class="fas fa-laptop" style="margin-right: 10px; font-size: 1.5rem; color: #558b79;"></i>Atención Virtual</h3>
@@ -581,6 +591,7 @@
     </section>
 
     <!-- FOOTER / CONTACTO -->
+          <a name="contacto"></a>
     <footer id="contacto-footer">
         <div class="container">
             <div class="footer-flex">
@@ -591,11 +602,11 @@
                     <h3>Solicite una entrevista de orientación</h3>
                     <p style="color: #555; margin-bottom: 15px;">Estamos disponibles para responder consultas y brindar información sobre nuestros tratamientos y modalidades de atención.</p>
                     <ul class="contact-info">
-                        <li><i class="fas fa-phone-alt"></i> 11 1234 5678</li>
-                        <li><i class="fas fa-envelope"></i> info@asistenciapsicologicaba.com.ar</li>
+                        <li><i class="fas fa-phone-alt"></i>+5411 2250-1939</li>
+                        <li><i class="fas fa-envelope"></i> info@asistenciapsicologica.org</li>
                         <li><i class="fas fa-map-marker-alt"></i> Ciudad Autónoma de Buenos Aires</li>
                     </ul>
-                    <a href="#" class="btn btn-primary contact-btn"><i class="fas fa-calendar-alt"></i> Solicitar Turno Ahora</a>
+                    <a href="https://wa.me/541122501939?text=Hola,+me+interesa+solicitar+una+entrevista" class="btn btn-primary contact-btn"><i class="fas fa-calendar-alt"></i> Solicitar Turno Ahora</a>
                 </div>
             </div>
             <div class="footer-bottom">
