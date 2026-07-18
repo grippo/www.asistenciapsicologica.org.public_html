@@ -203,6 +203,11 @@
             grid-template-columns: repeat(3, 1fr);
             gap: 30px;
         }
+        .services-gridx2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
         .service-card {
             background: white;
             border-radius: 20px;
@@ -229,8 +234,8 @@
             bottom: -25px;
             left: 50%;
             transform: translateX(-50%);
-            width: 50px;
-            height: 50px;
+            width: 64px;
+            height: 64px;
             background: white;
             border-radius: 50%;
             display: flex;
@@ -238,7 +243,7 @@
             justify-content: center;
             box-shadow: 0 4px 10px rgba(0,0,0,0.1);
             color: #285a53;
-            font-size: 1.2rem;
+            font-size: 1.8rem;
         }
         .service-card h3 {
             margin: 35px 0 10px;
@@ -391,6 +396,7 @@
         /* --- MEDIA QUERIES --- */
         @media (max-width: 900px) {
             .services-grid { grid-template-columns: repeat(2, 1fr); }
+            .services-gridx2 { grid-template-columns: repeat(2, 1fr); }
             .modalidades-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 768px) {
@@ -399,6 +405,7 @@
             .hero-flex { flex-direction: column-reverse; }
             .hero-content h1 { font-size: 2rem; }
             .services-grid { grid-template-columns: 1fr; }
+            .services-gridx2 { grid-template-columns: 1fr; }
             .footer-flex { flex-direction: column; }
         }
     </style>
@@ -515,11 +522,33 @@
                 <!-- Card 6 -->
                 <div class="service-card">
                     <div class="service-img-wrap">
-                        <img src="https://images.unsplash.com/photo-1501504905252-473c47e087f8?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Psicodiagnósticos">
+                        <img src="https://images.unsplash.com/photo-1643877323040-ebf5c69961dd?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Psicodiagnósticos">
                         <div class="service-icon"><i class="fas fa-clipboard-list"></i></div>
                     </div>
                     <h3>Psicodiagnósticos</h3>
                     <p>Evaluaciones psicológicas y psicodiagnósticas para niños, adolescentes y adultos con informes profesionales.</p>
+                </div>
+            </div>
+        </div>
+        <div class="container">
+            <div class="services-gridx2">
+                <!-- Card 7 -->
+                <div class="service-card">
+                    <div class="service-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1716840646010-e5622fd6683d?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Psicodiagnósticos">
+                        <div class="service-icon"><i class="fas fa-graduation-cap"></i></div>
+                    </div>
+                    <h3>Orientación Vocacional</h3>
+                    <p>Proceso de autoconocimiento y exploración para la elección de estudios, carrera o proyectos laborales.</p>
+                </div>
+                <!-- Card 8 -->
+                <div class="service-card">
+                    <div class="service-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1615766553246-9147b6d50e90?ixlib=rb-4.0.3&auto=format&fit=crop&w=400&q=80" alt="Psicodiagnósticos">
+                        <div class="service-icon"><i class="fas fa-person-pregnant"></i></div>
+                    </div>
+                    <h3>Psicología Perinatal</h3>
+                    <p>Acompañamiento psicológico durante el embarazo, puerperio, maternidad, paternidad y procesos reproductivos.</p>
                 </div>
             </div>
         </div>
